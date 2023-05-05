@@ -12,3 +12,4 @@ It would be preferable to have OpenJDK retain AccessController and AccessControl
 # Security compatibility libarary is a nice idea, however in practise, there are major issues:
 ## We cannot preserve context across threads.
 ## It acts only as a convenience layer for developers, it is a compromise.
+The reality is, a new security layer is required, that cannot be made compatible with pre Java 18 JVM's because those JVM's allow finalizer attacks, hooks cannot be added without the support of OpenJDK, to those versions without instrumenting constructors.
